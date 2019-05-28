@@ -1,0 +1,71 @@
+{
+  "name": "@yoctol/bookshelf-test-utils",
+  "description": "Yoctol specific test utils for Bookshelf",
+  "license": "MIT",
+  "version": "0.0.3",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "extend-expect.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:staged": "lint-staged",
+    "test": "npm run lint && npm run testonly",
+    "testonly": "jest --detectOpenHandles",
+    "testonly:cov": "jest --coverage --runInBand --detectOpenHandles",
+    "testonly:watch": "jest --watch",
+    "preversion": "npm test"
+  },
+  "dependencies": {
+    "faker": "^4.1.0",
+    "knex": "^0.16.5",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "bookshelf": "^0.13.3",
+    "eslint": "^5.16.0",
+    "eslint-config-yoctol-base": "^0.19.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.4.0",
+    "husky": "^1.3.1",
+    "jest": "^24.7.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
+    "prettier-package-json": "^2.1.0"
+  },
+  "keywords": [
+    "bookshelf",
+    "test",
+    "test-utils",
+    "yoctol"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/__tests__/knex",
+      "<rootDir>/src/__tests__/bookshelf"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true
+  }
+}

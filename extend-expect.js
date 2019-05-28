@@ -1,0 +1,1 @@
+require('./src/extend-expect');
