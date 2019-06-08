@@ -1,20 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-
 const _knex = require('knex');
 
 const factory = require('./factory');
-
-function resolveDefaultKnexfilePath() {
-  return path.join(process.cwd(), 'knexfile.js');
-}
-
-function tryLoadingDefaultConfiguration() {
-  const knexfilePath = resolveDefaultKnexfilePath();
-  if (fs.existsSync(knexfilePath)) {
-    return require(knexfilePath); // eslint-disable-line import/no-dynamic-require
-  }
-}
+const { setupMockQuery, snapshotMigration } = require('./migration');
+const { tryLoadingDefaultConfiguration } = require('./utils');
 
 const knex = _knex(tryLoadingDefaultConfiguration());
 
@@ -98,4 +86,7 @@ module.exports = {
   destroyDatabaseConnections,
 
   factory,
+
+  setupMockQuery,
+  snapshotMigration,
 };

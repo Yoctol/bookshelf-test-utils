@@ -670,7 +670,7 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bluebird@^3.4.3, bluebird@^3.5.4:
+bluebird@^3.4.1, bluebird@^3.4.3, bluebird@^3.5.4:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
@@ -3036,7 +3036,7 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash@^4.13.1, lodash@^4.17.11:
+lodash@^4.13.1, lodash@^4.14.2, lodash@^4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -3227,6 +3227,15 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mock-knex@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/mock-knex/-/mock-knex-0.4.5.tgz#bbfb83fcb7fb8b07c4c80edf0f6403b4a37aa27c"
+  integrity sha512-ZDBTqp5f+SLNOWbydOK/zO6pr1WeWDt3BEvaWI9ohiFz1VKdGsc/kRTntxNADKmQ7+Rql0aZ/1dxseLCV9i2tg==
+  dependencies:
+    bluebird "^3.4.1"
+    lodash "^4.14.2"
+    semver "^5.3.0"
 
 ms@2.0.0:
   version "2.0.0"
