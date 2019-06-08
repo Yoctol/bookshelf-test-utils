@@ -1,9 +1,6 @@
 const mockKnex = require('mock-knex');
-const _knex = require('knex');
 
-const { tryLoadingDefaultConfiguration } = require('./utils');
-
-const knex = _knex(tryLoadingDefaultConfiguration());
+const knex = require('./knex');
 
 let tracker;
 
