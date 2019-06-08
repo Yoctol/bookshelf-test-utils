@@ -13,8 +13,8 @@
     "lint:fix": "npm run lint -- --fix",
     "lint:staged": "lint-staged",
     "test": "npm run lint && npm run testonly",
-    "testonly": "jest --detectOpenHandles",
-    "testonly:cov": "jest --coverage --runInBand --detectOpenHandles",
+    "testonly": "jest --detectOpenHandles --passWithNoTests",
+    "testonly:cov": "jest --coverage --runInBand --detectOpenHandles --passWithNoTests",
     "testonly:watch": "jest --watch",
     "preversion": "npm test"
   },
