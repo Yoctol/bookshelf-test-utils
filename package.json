@@ -2,7 +2,7 @@
   "name": "@yoctol/bookshelf-test-utils",
   "description": "Yoctol specific test utils for Bookshelf",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "src/index.js",
   "files": [
     "src",
