@@ -1,6 +1,5 @@
 const factory = require('./factory');
 const knex = require('./knex');
-const { setupMockQuery, snapshotMigration } = require('./migration');
 
 function getAllViews() {
   return knex('pg_catalog.pg_views')
@@ -83,7 +82,5 @@ module.exports = {
 
   factory,
 
-  setupMockQuery,
-  snapshotMigration,
   knex,
 };

@@ -64,6 +64,8 @@ function snapshotMigration({ up, down }) {
 }
 
 module.exports = {
+  knex,
+
   setupMockQuery,
   snapshotMigration,
 };
