@@ -37,7 +37,8 @@ function setupMockQuery({ responses = [] } = {}) {
   });
 
   return {
-    getSQL: () => sql.join('\n'),
+    getSQL: ({ withSemicolon = true } = {}) =>
+      sql.join(`${withSemicolon ? ';' : ''}\n`),
   };
 }
 
