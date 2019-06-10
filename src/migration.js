@@ -42,14 +42,14 @@ function setupMockQuery({ responses = [] } = {}) {
   };
 }
 
-function snapshotMigration({ up, down }) {
+function snapshotMigration({ up, down }, options = {}) {
   describe('#up', () => {
     it('should match SQL snapshot', async () => {
       const { getSQL } = setupMockQuery();
 
       await up(knex);
 
-      expect(getSQL()).toMatchSnapshot();
+      expect(getSQL(options)).toMatchSnapshot();
     });
   });
 
@@ -59,7 +59,7 @@ function snapshotMigration({ up, down }) {
 
       await down(knex);
 
-      expect(getSQL()).toMatchSnapshot();
+      expect(getSQL(options)).toMatchSnapshot();
     });
   });
 }
