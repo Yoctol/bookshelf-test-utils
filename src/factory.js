@@ -122,7 +122,7 @@ class FactoryBuilder {
   async create(attributes = {}) {
     if (!this._amount) {
       const instance = await this.makeInstance(attributes);
-      await instance.save();
+      await instance.save(null, { method: 'insert' });
 
       await this.callAfterCreating(this._Model.collection([instance]));
 
@@ -131,9 +131,11 @@ class FactoryBuilder {
 
     const results = this._Model.collection(
       await Promise.all(
-        new Array(this._amount)
-          .fill(0)
-          .map(async () => (await this.makeInstance(attributes)).save())
+        new Array(this._amount).fill(0).map(async () =>
+          (await this.makeInstance(attributes)).save(null, {
+            method: 'insert',
+          })
+        )
       )
     );
 
