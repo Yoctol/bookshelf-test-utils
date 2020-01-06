@@ -40,7 +40,7 @@ class FactoryBuilder {
     const stateAttributes = get(modelStates, `${this._Model.name}.${state}`);
 
     if (typeof stateAttributes === 'function') {
-      return stateAttributes(this._faker, attributes);
+      return stateAttributes(faker, attributes);
     }
 
     return stateAttributes;
