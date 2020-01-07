@@ -23,9 +23,11 @@ function setupMockQuery({ responses = [] } = {}) {
   tracker.on('query', query => {
     let boundSQL = query.sql;
 
-    query.bindings.forEach((binding, i) => {
-      boundSQL = boundSQL.replace(`$${i + 1}`, '?');
-    });
+    if (query.bindings) {
+      query.bindings.forEach((binding, i) => {
+        boundSQL = boundSQL.replace(`$${i + 1}`, '?');
+      });
+    }
 
     const rawQuery = knex.raw(boundSQL, query.bindings).toQuery();
 
