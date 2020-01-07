@@ -2,7 +2,7 @@
   "name": "@yoctol/bookshelf-test-utils",
   "description": "Yoctol specific test utils for Bookshelf",
   "license": "MIT",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "src/index.js",
   "files": [
     "extend-expect.js",
