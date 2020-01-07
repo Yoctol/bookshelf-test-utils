@@ -77,9 +77,7 @@ class FactoryBuilder {
 
     if (!getAttributes) {
       throw new Error(
-        `Unable to locate factory with name [${this._Model.name}] [${
-          this._name
-        }].`
+        `Unable to locate factory with name [${this._Model.name}] [${this._name}].`
       );
     }
 
