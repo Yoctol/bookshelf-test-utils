@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "faker": "^4.1.0",
-    "knex": "^0.21.12",
+    "knex": "^2.4.0",
     "lodash": "^4.17.20",
     "mock-knex": "^0.4.7"
   },
